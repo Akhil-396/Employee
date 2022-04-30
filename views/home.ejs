@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMP_MANAGE</title>
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+       <div class="ui massive menu">
+        </div>
+
+       
+            <div class="header item">
+               
+        </div>
+        
+            <br>
+            <br>
+            <br>
+    
+            <div class="ui container">
+                </div>
+            <form action="/add" class="ui form" method="POST">
+                <div class="ui five fields">
+
+                   
+                    <div class="field">
+            <label for="id" class="ui header black" >Enter the employee id</label>
+        <input type="number" name="id">
+                    </div>
+                   
+        
+                    <div class="field">         
+
+            <label for="name" class="ui header black" >Enter the employee name</label>
+        <input type="text" name="name">            
+        </div>
+        <div class="field">         
+
+            <label for="address" class="ui header black" >Enter the employee address</label>
+        <input type="text" name="address">            
+        </div>
+       
+       
+        <div class="field">
+
+            <label for="designation" class="ui header black">Enter the employee designation</label>
+        <input type="text" name="designation">            
+        </div>
+        <div class="field">
+            <label for="doj" class="ui header black">Enter doj</label>
+            <input type="Date" name="doj">
+        </div>
+        <div class="field">
+            <label for="dor" class="ui header black">Enter dor</label>
+            <input type="Date" name="dor">
+        </div>
+
+       
+                    </div>
+                    <div class="ui fluid field">
+                    <input type="submit" value="submit" class="ui button green fluid">
+                </div>
+           
+                </form>
+           
+                <br><br>
+                <table class="ui green table">
+                <thead>
+                    <tr>
+                    <th>Employee Id</th>
+                    
+                    <th>Employee Name</th>
+                    <th>Employee Address</th>
+                    <th>Designation</th>
+                    <th>DOJ</th>
+                    <th>DOR</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+
+                </tr>
+                </thead>
+           
+            <tbody>
+               
+                <% employer.forEach((employer)=>{ %>
+                    <tr>
+                    <td><%- employer.id  %></td>
+                    <td><%- employer.name  %></td>
+                    <td><%- employer.address  %></td>
+                    <td><%- employer.designation  %></td>
+                    <td><%- employer.doj  %></td>
+                    <td><%- employer.dor  %></td>
+                   
+                     <td><a class="ui red button" href="/delete/<%= employer._id %>" ><i class="minus icon"></i></a></th>
+                     <td><a class="ui purple button" href="/edit/<%= employer._id %>" ><i class="edit icon"></i></a></th>
+                </tr>
+                <% }); %>
+                </tbody>
+        </table>
+       
+    </div>
+        </div>        
+    <script src="/js/semantic.min.js"></script>
+    
+</body>
+</html>
